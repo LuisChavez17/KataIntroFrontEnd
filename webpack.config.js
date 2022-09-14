@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
+    /* Telling webpack where to start looking for the files to bundle. */
+    // entry: "/src/index.js",
     module: {
         rules: [
             {
