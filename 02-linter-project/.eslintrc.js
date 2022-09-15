@@ -4,28 +4,28 @@ module.exports = {
 		'commonjs': true,
 		'es2021': true
 	},
-	'extends': 'eslint:recommended',
+	'extends': 'airbnb-base/legacy',
 	'overrides': [
 	],
 	'parserOptions': {
 		'ecmaVersion': 'latest'
 	},
 	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
-		'linebreak-style': [
-			'error',
-			'windows'
-		],
-		'quotes': [
-			'error',
-			'single'
-		],
-		'semi': [
-			'error',
-			'always'
-		]
+		// 'indent': [
+		// 	'error',
+		// 	'tab'
+		// ],
+		// 'linebreak-style': [
+		// 	'error',
+		// 	'windows'
+		// ],
+		// 'quotes': [
+		// 	'error',
+		// 	'single'
+		// ],
+		// 'semi': [
+		// 	'error',
+		// 	'always'
+		// ]
 	}
 };
