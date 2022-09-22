@@ -41,6 +41,13 @@ class ClassComponent extends React.Component {
         )
     }
 
+    handleChange = (event) => {
+        this.setState({
+            ...this.state,
+            rol: event.target.value
+        })
+    }
+
     render() {
         return (
             <div className="app">
@@ -76,6 +83,11 @@ class ClassComponent extends React.Component {
                 {
                     this.renderJsx()
                 }
+
+                <div>
+                    <input type="text" placeholder="escribir" onChange={this.handleChange} />
+                    <p>{this.state.rol}</p>
+                </div>
 
             </div>
         )
