@@ -13,6 +13,13 @@ class ClassComponent extends React.Component {
         rol: '',
         age: 20,
     }
+    handleClick = (event) => {
+        this.setState({
+            ...this.state,
+            age: this.state.age + 1,
+            //   rol: event.target.value
+        })
+    }
     render() {
         return (
             <div className="app">
@@ -22,6 +29,7 @@ class ClassComponent extends React.Component {
                     Rol:<span>{this.state.rol}</span>
                 </p>
                 <span>Age: {this.state.age}</span>
+                <button onClick={this.handleClick}>Suma</button>
             </div>
         )
     }
