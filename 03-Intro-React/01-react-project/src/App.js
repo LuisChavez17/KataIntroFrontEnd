@@ -8,7 +8,7 @@ import ClassComponent from "./Components/ClassComponent";
 function App() {
   return (
     <div>
-    HHHHHHHHHHHHHH
+    <ClassComponent/>
     </div>
   );
 }
