@@ -32,6 +32,15 @@ class ClassComponent extends React.Component {
             //   rol: event.target.value
         })
     }
+
+    renderJsx = () => {
+        return (
+            <div>
+                <h3>Hola desde una funcion</h3>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className="app">
@@ -63,6 +72,11 @@ class ClassComponent extends React.Component {
                 >
                     Resta
                 </button>
+
+                {
+                    this.renderJsx()
+                }
+
             </div>
         )
     }
