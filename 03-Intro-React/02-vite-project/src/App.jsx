@@ -1,14 +1,14 @@
-import { Component, useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Component, Fragment, useState } from 'react'
+// import reactLogo from './assets/react.svg'
 import './App.css'
 // import { Component } from 'react'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <h3> React con class component</h3>
-      </div>
+      </Fragment>
     );
   }
 }
