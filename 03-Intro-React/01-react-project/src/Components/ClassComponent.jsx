@@ -28,7 +28,7 @@ class ClassComponent extends React.Component {
     handleClick = (event) => {
         this.setState({
             ...this.state,
-            age: this.state.age + 1,
+            age: this.state.age + 1 || 0,
             //   rol: event.target.value
         })
     }
@@ -53,6 +53,16 @@ class ClassComponent extends React.Component {
                     })}
                 </ul> */}
                 <button onClick={this.handleClick}>Suma</button>
+                <button
+                    onClick={() => {
+                        this.setState({
+                            ...this.state,
+                            age: this.state.age - 1 || 0,
+                        })
+                    }}
+                >
+                    Resta
+                </button>
             </div>
         )
     }
