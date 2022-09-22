@@ -9,11 +9,11 @@ import reportWebVitals from './reportWebVitals';
 /* The class component is a React component that extends the React.Component class. */
 class ClassComponent extends React.Component {
     render() {
-        return {
+        return (
             <div className="app">
             <h2>This is a class component</h2>
             </div>
-        }
+        )
     }
 }
 
