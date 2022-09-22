@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function name(params) {
-    
+const FunctionalComponent = () => {
+    return (
+        <h2>hi from a functioncomponent</h2>
+    )
 }
 
-const name = () => {
-    
-}
+export default FunctionalComponent
