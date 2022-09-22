@@ -12,6 +12,18 @@ class ClassComponent extends React.Component {
         name: 'Estefania',
         rol: '',
         age: 20,
+        other: [
+            {
+                name: 'Estefania',
+                rol: 'Frontend',
+                age: 20,
+            },
+            {
+                name: 'Carlos',
+                rol: 'Frontend',
+                age: 25,
+            },
+        ],
     }
     handleClick = (event) => {
         this.setState({
@@ -29,6 +41,17 @@ class ClassComponent extends React.Component {
                     Rol:<span>{this.state.rol}</span>
                 </p>
                 <span>Age: {this.state.age}</span>
+                {/* <ul>
+                    {this.state.other.map((item, index) => {
+                        return (
+                            <>
+                                <li>{item.name}</li>
+                                <li>{item.rol}</li>
+                                <li>{item.age}</li>
+                            </>
+                        )
+                    })}
+                </ul> */}
                 <button onClick={this.handleClick}>Suma</button>
             </div>
         )
