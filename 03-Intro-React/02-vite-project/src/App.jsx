@@ -25,9 +25,10 @@ class App extends Component {
       <>
         <h3> React con class component</h3>
         <div className="App">
-          <span>
-          Ingresa tu edad: <b>{this.state.counter}</b>{" "}
-          </span>
+        <div style={{ fontSize: 25, color: "yellow" }}>
+            {/* Objeto */}
+            Ingresa tu edad: <b>{this.state.counter}</b>{" "}
+          </div>
 
           <div className="btn-section">
             <button onClick={() => this.handleClick("inc")}>Incrementar</button>
@@ -35,12 +36,12 @@ class App extends Component {
           </div>
         </div>
 
-        {/* {/* Conditional IF  */}
-         {/* if(state.counter > 4) {}  */}
+        {/* Conditional IF  */}
+        {/* if(state.counter > 4) {}  */}
         {this.state.counter > 4 && <p>Ya puedes ir al kinder</p>}
 
-         {/* {/* CONDITIONAL IF ELSE  */}
-        {/* {/* condicion ? verdadero : false  */}
+        {/* CONDITIONAL IF ELSE  */}
+        {/* condicion ? verdadero : false  */}
         {this.state.counter > 12 ? (
           <>
             <h4> Ya pasas a secundaria</h4>
@@ -48,11 +49,38 @@ class App extends Component {
         ) : (
           <h5> Estas pequeño</h5>
         )}
-      
+
+        {/* EJERCICIO 
+          MOSTRAR EL SIG MENSAJE CUANDO SEAS MAYOR DE EDAD (>+ 18) YA ERES MAYOR DE EDAD
+          MOSTRAR EL SIG MENSAJE CUANDO TENGAS ENTRE 18 Y 12 AñOS O MAS  ERES UN ADOLESCENTE
+          MOSTRAR EL SIG MENSAJE CUANDO TENGAS MENOS 12 Años  ERES UN NIñO
+          USAR CONDITIONAL RENDERING : )
+        */}
+
+        {this.state.counter >= 18 ? (
+          <p> YA ERES MAYOR DE EDAD 🍻</p>
+        ) : this.state.counter < 18 && this.state.counter >= 12 ? (
+          <p> ERES UN ADOLESCENTE 📕</p>
+        ) : (
+          <p> ERES UN NIñO</p>
+        )}
+        {/*  IF ELSE IF ELSE */}
       </>
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function App() {
