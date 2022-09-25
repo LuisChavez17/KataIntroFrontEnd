@@ -22,11 +22,11 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <h3> React con class component</h3>
         <div className="App">
           <span>
-            Contador <b>{this.state.counter}</b>{" "}
+          Ingresa tu edad: <b>{this.state.counter}</b>{" "}
           </span>
 
           <div className="btn-section">
@@ -34,7 +34,11 @@ class App extends Component {
             <button onClick={() => this.handleClick("dec")}>Decrementar</button>
           </div>
         </div>
-      </Fragment>
+
+        {/* {/* Conditional IF  */}
+         {/* if(state.counter > 4) {}  */}
+        {this.state.counter > 4 && <p>Ya puedes ir al kinder</p>}
+      </>
     );
   }
 }
