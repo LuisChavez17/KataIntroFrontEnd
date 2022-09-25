@@ -38,6 +38,17 @@ class App extends Component {
         {/* {/* Conditional IF  */}
          {/* if(state.counter > 4) {}  */}
         {this.state.counter > 4 && <p>Ya puedes ir al kinder</p>}
+
+         {/* {/* CONDITIONAL IF ELSE  */}
+        {/* {/* condicion ? verdadero : false  */}
+        {this.state.counter > 12 ? (
+          <>
+            <h4> Ya pasas a secundaria</h4>
+          </>
+        ) : (
+          <h5> Estas pequeño</h5>
+        )}
+      
       </>
     );
   }
