@@ -8,10 +8,21 @@ class App extends Component {
     return (
       <Fragment>
         <h3> React con class component</h3>
+        <div className="App">
+          <span>
+            Contador <b>{this.state.counter}</b>{" "}
+          </span>
+
+          <div className="btn-section">
+            <button onClick={() => this.handleClick("inc")}>Incrementar</button>
+            <button onClick={() => this.handleClick("dec")}>Decrementar</button>
+          </div>
+        </div>
       </Fragment>
     );
   }
 }
+
 
 // function App() {
 //   const [count, setCount] = useState(0)
