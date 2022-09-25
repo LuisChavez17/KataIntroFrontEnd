@@ -23,7 +23,10 @@ class App extends Component {
   render() {
     return (
       <>
-        <h3> React con class component</h3>
+        <h3
+          style={!this.state.darkMode ? { color: "white" } : { color: "red" }}
+        >
+         React con class component</h3>
         <div className="App">
         <div style={{ fontSize: 25, color: "yellow" }}>
             {/* Objeto */}
