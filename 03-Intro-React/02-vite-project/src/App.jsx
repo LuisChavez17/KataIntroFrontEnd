@@ -8,13 +8,12 @@ class App extends Component {
     counter: 0,
   };
 
-  handleClickIncrement = () => {
-    this.setState({counter: this.state.counter + 1});
+  handleClick = (type) => {
+    this.setState({
+      counter: type === "inc" ? this.state.counter + 1 : this.state.counter -1,
+    });
   };
 
-  handleClickDecrement = () => {
-    this.setState({counter: this.state.counter - 1});
-  };
 
   render() {
     return (
