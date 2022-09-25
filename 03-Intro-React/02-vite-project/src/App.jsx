@@ -7,7 +7,15 @@ class App extends Component {
   state = {
     counter: 0,
   };
-  
+
+  handleClickIncrement = () => {
+    this.setState({counter: this.state.counter + 1});
+  };
+
+  handleClickDecrement = () => {
+    this.setState({counter: this.state.counter - 1});
+  };
+
   render() {
     return (
       <Fragment>
