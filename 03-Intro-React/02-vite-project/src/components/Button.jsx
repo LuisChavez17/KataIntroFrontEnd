@@ -12,7 +12,11 @@ export default class Button extends Component {
                     <button onClick={() => this.props.incrementCounter(3)}>
                         {" "}
                         Incrementar counter
-                    </button>
+                        </button>
+                    <button onClick={() => this.props.decrementCounter(7)}>
+                            {" "}
+                            Decrement counter
+                        </button>
                 </div>
             </div>
         )
