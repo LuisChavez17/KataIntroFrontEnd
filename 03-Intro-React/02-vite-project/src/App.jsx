@@ -14,7 +14,9 @@ class App extends Component {
   };
 
   handleClick = (type) => {
-    if (type === "inc") this.setState({ counter: this.state.counter + 1 });
+    if (type === "inc") 
+    
+    this.setState({ counter: this.state.counter + 1 });
     else {
       if (this.state.counter > 0) {
         this.setState({
@@ -79,9 +81,17 @@ class App extends Component {
           <Button age={this.state.counter}
               style={this.state.darkMode}
               incrementCounter={(value) =>
-                this.state({counter: this.state.counter + value})
+                this.setstate({counter: this.state.counter + value})
                 // console.log(`valor de incremento ${value}`)
               }
+              decrementValue={(decvalue) => {
+                if (this.state.counter >= 7) {
+                  this.setState({
+                    counter: this.state.counter - decvalue,
+                  });
+                }
+              }
+            }
             />
         {/*  IF ELSE IF ELSE */}
       </>
