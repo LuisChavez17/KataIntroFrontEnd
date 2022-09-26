@@ -31,9 +31,9 @@ class App extends Component {
         <h3
           style={!this.state.darkMode ? { color: "white" } : { color: "red" }}
         >
-         React con class component</h3>
+          React con class component</h3>
         <div className="App">
-        <div style={{ fontSize: 25, color: "yellow" }}>
+          <div style={{ fontSize: 25, color: "yellow" }}>
             {/* Objeto */}
             Ingresa tu edad: <b>{this.state.counter}</b>{" "}
           </div>
@@ -66,14 +66,19 @@ class App extends Component {
         */}
 
         {this.state.counter >= 18 ? (
-          <PersonComponentt/>
+          <PersonComponentt />
         ) : this.state.counter < 18 && this.state.counter >= 12 ? (
-          <TeenagerComponent/>
+          <TeenagerComponent />
         ) : (
-        <>
-        <ChildComponent/>
-        <Button age={this.state.counter} style={this.state.darkMode}/>
-        </> )}
+          <>
+            <ChildComponent />
+            <Button age={this.state.counter}
+              style={this.state.darkMode}
+              incrementCounter={(value) =>
+                console.log(`valor de incremento ${value}`)
+              }
+            />
+          </>)}
         {/*  IF ELSE IF ELSE */}
       </>
     );
