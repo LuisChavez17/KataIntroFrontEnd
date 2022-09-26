@@ -4,6 +4,15 @@ import FormComponent from './components/FormComponent'
 import NavbarComponent from './components/NavbarComponent'
 
 export class App extends Component {
+  state = {
+    form: {
+      firstName: "",
+      lastName: "",
+      username: "",
+      jobTitle: "",
+    }
+  }
+  
   render() {
     return (
       <div className="App">
