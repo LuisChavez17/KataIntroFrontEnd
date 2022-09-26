@@ -81,10 +81,12 @@ class App extends Component {
           )}
           <Button age={this.state.counter}
               style={this.state.darkMode}
-              incrementCounter={(value) =>
+              incrementCounter={(value) => {
+                if (this.state.counter <= 25){
                 this.setstate({counter: this.state.counter + value})
                 // console.log(`valor de incremento ${value}`)
               }
+            }}
               decrementValue={(decvalue) => {
                 if (this.state.counter >= 7) {
                   this.setState({
