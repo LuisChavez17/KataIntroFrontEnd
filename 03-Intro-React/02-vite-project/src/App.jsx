@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     counter: 0,
     darkMode: false,
+    team: "Dev.f"
   };
 
   handleClick = (type) => {
@@ -29,6 +30,10 @@ class App extends Component {
 
 
   render() {
+    const stylesDiv2 = {
+      fontSize: 25, 
+      color: "yellow"
+    }
     return (
       <>
         <h3
@@ -36,7 +41,7 @@ class App extends Component {
         >
           React con class component</h3>
         <div className="App">
-          <div style={{ fontSize: 25, color: "yellow" }}>
+          <div style={{ fontSize: 25, color: "yellow" }}> style={stylesDiv2}
             {/* Objeto */}
             Ingresa tu edad: <b>{this.state.counter}</b>{" "}
           </div>
@@ -69,7 +74,7 @@ class App extends Component {
         */}
 
         {this.state.counter >= 18 ? (
-          <PersonComponentt />
+          <PersonComponentt test={true}/>
         ) : this.state.counter < 18 && this.state.counter >= 12 ? (
           <TeenagerComponent />
         ) : (
