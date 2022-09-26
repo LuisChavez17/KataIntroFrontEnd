@@ -72,7 +72,7 @@ class App extends Component {
         ) : (
         <>
         <ChildComponent/>
-        <Button age={this.state.counter}/>
+        <Button age={this.state.counter} style={this.state.darkMode}/>
         </> )}
         {/*  IF ELSE IF ELSE */}
       </>
