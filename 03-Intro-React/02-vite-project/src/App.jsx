@@ -2,6 +2,9 @@ import { Component, Fragment, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import './App.css'
 import ChildComponent from './components/ChildComponent';
+import Button from './components/Button';
+import TeenagerComponent from './components/TeenagerComponent';
+import PersonComponentt from './components/PersonComponentt';
 // import { Component } from 'react'
 
 class App extends Component {
@@ -63,10 +66,14 @@ class App extends Component {
         */}
 
         {this.state.counter >= 18 ? (
-          <p> YA ERES MAYOR DE EDAD 🍻</p>
+          <PersonComponentt/>
         ) : this.state.counter < 18 && this.state.counter >= 12 ? (
-          <p> ERES UN ADOLESCENTE 📕</p>
-        ) : ChildComponent }
+          <TeenagerComponent/>
+        ) : (
+        <>
+        <ChildComponent/>
+        <Button age={this.state.counter}/>
+        </> )}
         {/*  IF ELSE IF ELSE */}
       </>
     );
