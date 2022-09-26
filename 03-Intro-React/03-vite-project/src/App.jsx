@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
+import BadgeComponent from './components/BadgeComponent'
+import FormComponent from './components/FormComponent'
+import NavbarComponent from './components/NavbarComponent'
 
 export class App extends Component {
   render() {
     return (
-      <div>App</div>
+      <div className="App">
+        <NavbarComponent/>
+        <FormComponent/>
+        <BadgeComponent/>
+      </div>
     )
   }
 }
