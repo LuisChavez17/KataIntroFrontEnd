@@ -12,13 +12,18 @@ export class App extends Component {
       jobTitle: "",
     }
   }
-  
+
   render() {
     return (
       <div className="App">
         <NavbarComponent/>
         <FormComponent/>
-        <BadgeComponent/>
+        <BadgeComponent
+        firstName={this.state.form.firstName} 
+        lastName={this.state.form.lastName}
+        username={this.state.form.username}
+        jobTitle={this.state.form.jobTitle}
+        />
       </div>
     )
   }
