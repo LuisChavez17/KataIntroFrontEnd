@@ -14,10 +14,11 @@ class App extends Component {
   };
 
   handleClick = (type) => {
-    if (type === "inc") 
-    
-    this.setState({ counter: this.state.counter + 1 });
-    else {
+    if (type === "inc") {
+      if (this.state.counter < 30) {
+        this.setState({ counter: this.state.counter + 1 })
+      }
+    } else {
       if (this.state.counter > 0) {
         this.setState({
           counter: this.state.counter - 1,
