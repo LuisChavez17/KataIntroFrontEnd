@@ -13,11 +13,20 @@ export class App extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <NavbarComponent/>
-        <FormComponent/>
+        <FormComponent handleChange={this.handleChange}/>
         <BadgeComponent
         firstName={this.state.form.firstName} 
         lastName={this.state.form.lastName}
