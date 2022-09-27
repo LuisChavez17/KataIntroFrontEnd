@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 
-export class FormComponent extends Component {
-
-  render() {
+const FormComponent = ({ handleChange }) => {
     return (
       <div>
         <h2>Crear Badge</h2>
@@ -26,7 +24,6 @@ export class FormComponent extends Component {
         </form>
       </div>
     )
-  }
 }
 
 export default FormComponent
