@@ -1,4 +1,4 @@
-import React, {  useState, useEffect  } from 'react'
+import React, { useState, useEffect } from 'react'
 import BadgeComponent from './components/BadgeComponent'
 import FormComponent from './components/FormComponent'
 import NavbarComponent from './components/NavbarComponent'
@@ -20,18 +20,15 @@ const App = () => {
     })
   }
 
-    return (
-      <div className="App">
-        <NavbarComponent/>
-        <FormComponent handleChange={this.handleChange}/>
-        <BadgeComponent
-        firstName={this.state.form.firstName} 
-        lastName={this.state.form.lastName}
-        username={this.state.form.username}
-        jobTitle={this.state.form.jobTitle}
-        />
-      </div>
-    )
+  return (
+    <div className="App">
+      <NavbarComponent />
+      <FormComponent handleChange={handleChange} />
+      <BadgeComponent
+        form={form}
+      />
+    </div>
+  )
 }
 
 export default App
