@@ -3,7 +3,13 @@ import './AxiosComponent.css'
 
 const AxiosComponent = ({ item }) => {
     return (
-        <div></div>
+        <div className="CharacterCard" style={{
+            backgroundImage: `url(${item.image})`
+        }}>
+            <div className="CharacterCard__name-container">
+                {item.name}
+            </div>
+        </div>
     )
 }
 
