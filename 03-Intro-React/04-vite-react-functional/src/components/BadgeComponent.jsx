@@ -10,13 +10,13 @@ const BadgeComponent = ({ form }) =>  {
         <div className="Badge__section-name">
           <img src="https://www.gravatar.com/avatar?d=identicon" alt="badge" />
           <h1>
-            {this.props.firstName} <br />
-            {this.props.lastName}
+            {form.firstName} <br />
+            {form.lastName}
           </h1>
         </div>
         <div className="Badge__section-info">
-          <h3>{this.props.jobTitle}</h3>
-          <div>@ {this.props.username}</div>
+          <h3>{form.jobTitle}</h3>
+          <div>@ {form.username}</div>
         </div>
         <div className="Badge__section-footer">
           #Devf
