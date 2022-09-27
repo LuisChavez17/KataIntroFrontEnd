@@ -35,9 +35,12 @@ const App = () => {
     <div className="App">
       <NavbarComponent />
       <FormComponent handleChange={handleChange} />
-      <BadgeComponent
-        form={form}
-      />
+      <BadgeComponent form={form} />
+      {
+        characters.map((item, index) => {
+          return <AxiosComponent item={item} key={`${index}-axios`} />
+        })
+      }
     </div>
   )
 }
