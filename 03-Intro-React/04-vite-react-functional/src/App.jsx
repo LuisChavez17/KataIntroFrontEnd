@@ -20,6 +20,7 @@ const App = () => {
   const fetchApi = () => {
     axios.get("https://rickandmortyapi.com/api/character").then(res => {
       const characters = res.data.results
+      /* Setting the state of the characters array to the characters array. */
       setCharacters(characters)
     })
   }
