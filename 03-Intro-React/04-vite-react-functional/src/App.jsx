@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import BadgeComponent from './components/BadgeComponent'
 import FormComponent from './components/FormComponent'
 import NavbarComponent from './components/NavbarComponent'
+import AxiosComponent from './components/AxiosComponent'
+import axios from 'axios'
 
 const App = () => {
   /* Creating a state object called form and setting it to an empty object called setForm. */
@@ -12,6 +14,10 @@ const App = () => {
     username: '',
     rol: ''
   })
+
+  const [characters, setCharacters] = useState([])
+
+  
 
   const handleChange = (event) => {
     setForm({
