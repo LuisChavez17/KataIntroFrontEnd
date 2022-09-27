@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import "./BadgeComponent.css"
 
-export class BadgeComponent extends Component {
-  render() {
+const BadgeComponent = ({ form }) =>  {
     return (
       <div className="Badge">
         <div className="Badge__header">
@@ -24,7 +23,6 @@ export class BadgeComponent extends Component {
         </div>
       </div>
     )
-  }
 }
 
 export default BadgeComponent
