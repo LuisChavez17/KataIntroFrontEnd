@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import "./NavbarComponent.css"
 
-export class NavbarComponent extends Component {
-  render() {
+const NavbarComponent = () => {
     return (
         <div className="Navbar">
           <div className="container-fluid">
@@ -14,6 +13,6 @@ export class NavbarComponent extends Component {
         </div>
       )
   }
-}
+
 
 export default NavbarComponent
