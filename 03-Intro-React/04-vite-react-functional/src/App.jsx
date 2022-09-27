@@ -3,7 +3,7 @@ import BadgeComponent from './components/BadgeComponent'
 import FormComponent from './components/FormComponent'
 import NavbarComponent from './components/NavbarComponent'
 
-export class App extends Component {
+const App = () => {
   state = {
     form: {
       firstName: "",
@@ -22,7 +22,6 @@ export class App extends Component {
     })
   }
 
-  render() {
     return (
       <div className="App">
         <NavbarComponent/>
@@ -35,7 +34,6 @@ export class App extends Component {
         />
       </div>
     )
-  }
 }
 
 export default App
