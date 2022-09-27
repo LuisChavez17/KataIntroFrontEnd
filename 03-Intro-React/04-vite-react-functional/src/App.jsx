@@ -4,6 +4,7 @@ import FormComponent from './components/FormComponent'
 import NavbarComponent from './components/NavbarComponent'
 
 const App = () => {
+  /* Creating a state object called form and setting it to an empty object called setForm. */
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -12,12 +13,10 @@ const App = () => {
     rol: ''
   })
 
-  handleChange = (event) => {
-    this.setState({
-      form: {
-        ...this.state.form,
-        [event.target.name]: event.target.value
-      }
+  const handleChange = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
     })
   }
 
