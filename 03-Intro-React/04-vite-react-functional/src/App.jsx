@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
+import React, {  useState, useEffect  } from 'react'
 import BadgeComponent from './components/BadgeComponent'
 import FormComponent from './components/FormComponent'
 import NavbarComponent from './components/NavbarComponent'
 
 const App = () => {
-  state = {
-    form: {
-      firstName: "",
-      lastName: "",
-      username: "",
-      jobTitle: "",
-    }
-  }
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    jobTitle: '',
+    username: '',
+    rol: ''
+  })
 
   handleChange = (event) => {
     this.setState({
