@@ -25,6 +25,18 @@ const App = () => {
     })
   }
 
+  // useEffect (CICLO DE VIDA HOOK)
+  useEffect(() => {
+    // Se ejecuta cuando se monta y se actualiza (props/state)
+    fetchApi()
+  });
+  
+  useEffect(() => {
+    return () => {
+      // Se ejecuta cuando se desmonta
+    }
+  });
+
   const handleChange = (event) => {
     setForm({
       ...form,
