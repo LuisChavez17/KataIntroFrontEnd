@@ -17,7 +17,12 @@ const App = () => {
 
   const [characters, setCharacters] = useState([])
 
-  
+  const fetchApi = () => {
+    axios.get("https://rickandmortyapi.com/api/character").then(res => {
+      const characters = res.data.results
+      setCharacters(characters)
+    })
+  }
 
   const handleChange = (event) => {
     setForm({
