@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import "./LoginForm.css";
 
-const LoginForm = () => {
+const LoginForm = ({ userLogged }) => {
+    const [credentials, setCredentials] = useState({}); // usuario: "", password: ""  1ER FORMA PARA WUITAR WARNING
     const credentialsHarcoded = { user: "usuarioG17", password: "password" };
 
     /**
@@ -21,16 +23,17 @@ const LoginForm = () => {
     const submitForm = () => {
         const { user, password } = credentialsHarcoded;
         if (credentials.user === user && credentials.password === password) {
-            console.log("credentials EXITOSAS ✅");
+            // console.log("credentials EXITOSAS ✅");
+            userLogged(true);
         }
     };
 
     return (
-        <div>
+        <div className="form">
             LoginForm Component
             <div>
-                <input type="text" name="user" value={credentials.user} onChange={handleFormValue} />
-                <input type="password" name="password" value={credentials.password} onChange={handleFormValue} />
+                <input type="text" name="user" value={credentials.user || ""} onChange={handleFormValue} />
+                <input type="password" name="password" value={credentials.password || ""} onChange={handleFormValue} />
                 <button onClick={() => submitForm()}>Login</button>
             </div>
         </div>
