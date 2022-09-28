@@ -24,6 +24,7 @@ const LoginForm = ({ userLogged }) => {
         const { user, password } = credentialsHarcoded;
         if (credentials.user === user && credentials.password === password) {
             // console.log("credentials EXITOSAS ✅");
+            /* Calling the function `userLogged` with the parameter `true`. */
             userLogged(true);
         }
     };
