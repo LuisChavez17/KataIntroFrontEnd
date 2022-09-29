@@ -29,6 +29,7 @@ const Dashboard = () => {
                 .get(`${BASE_URL}planets/${planetIndex}`)
                 .then(({ data }) => {
                     console.log("planet details", data);
+                    /* Setting the state of planetInfo to the data that is returned from the API. */
                     setPlanetInfo(data);
                 })
                 .catch((error) => console.log("error calling SWAPI", error));
