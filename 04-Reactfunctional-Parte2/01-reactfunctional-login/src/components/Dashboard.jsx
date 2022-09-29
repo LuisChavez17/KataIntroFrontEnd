@@ -49,6 +49,9 @@ const Dashboard = () => {
                 <h3>Cargando información... ⭕️</h3>
             ) : (
                 <div>
+                    /* Checking if the planetInfo object has a length of 0. If it does, it will map
+                    over the planetArray and display the planet information. If it doesn't, it will
+                    display the loading message. */
                     {Object.values(planetInfo).length === 0 ? (
                         planetArray.map((planet, index) => (
                             <div key={index} onClick={() => recoverPlanetDetail(index)} style={{ border: "2px solid white", margin: "10px 0", cursor: "pointer" }}>
