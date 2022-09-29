@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import PlanetDetail from "./PlanetDetail";
 
 const Dashboard = () => {
     /* A constant that is used to store the base URL of the API. */
@@ -72,7 +73,8 @@ const Dashboard = () => {
                             </div>
                         ))
                     ) : (
-                        <h3>Mostrar detalle</h3>
+                        <PlanetDetail /* Passing the planetInfo object to the PlanetDetail component. */
+                        details={planetInfo} />
                     )}
                 </div>
             )}
