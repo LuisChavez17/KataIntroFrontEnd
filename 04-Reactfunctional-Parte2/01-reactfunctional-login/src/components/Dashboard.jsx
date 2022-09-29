@@ -23,11 +23,16 @@ const Dashboard = () => {
 
     // const recoverPlanetDetail = () => console.log("llamada otra vez a la API ");
     useEffect(() => {
-        console.log("planetIndex", planetIndex);
-        axios
-            .get(`${BASE_URL}planets/${planetIndex}`)
-            .then(({ data }) => console.log("detalle planeta", data))
-            .catch((error) => console.log("error calling SWAPI", error));
+        // console.log("planetIndex", planetIndex);
+        if (planetIndex) {
+            axios
+                .get(`${BASE_URL}planets/${planetIndex}`)
+                .then(({ data }) => {
+                    console.log("planet details", data);
+                    setPlanetInfo(data);
+                })
+                .catch((error) => console.log("error calling SWAPI", error));
+        }
     }, [planetIndex]);
 
     const recoverPlanetDetail = (valorIndice) => {
@@ -43,23 +48,29 @@ const Dashboard = () => {
             {planetArray.length === 0 ? (
                 <h3>Cargando información... ⭕️</h3>
             ) : (
-                planetArray.map((planet, index) => (
-                    <div key={index}  onClick={() => recoverPlanetDetail(index)} style={{ border: "2px solid white", margin: "10px 0" }}>
-                        <p>Name: {planet.name}</p>
-                        <p>Climate {planet.climate}</p>
-                        {/* <p> Lista de peliculas: <array> </p>  ???? */}
-                        <div>
-                            {" "}
-                            <b>Lista de peliculas: </b>
-                            <ul>
-                                {" "}
-                                {planet.films.map((planet, i) => (
-                                    <li key={i}> URL: {planet} </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                ))
+                <div>
+                    {Object.values(planetInfo).length === 0 ? (
+                        planetArray.map((planet, index) => (
+                            <div key={index} onClick={() => recoverPlanetDetail(index)} style={{ border: "2px solid white", margin: "10px 0", cursor: "pointer" }}>
+                                <p>Name: {planet.name}</p>
+                                <p>Climate {planet.climate}</p>
+                                {/* <p> Lista de peliculas: <array> </p>  ???? */}
+                                <div>
+                                    {" "}
+                                    <b>Lista de peliculas: </b>
+                                    <ul>
+                                        {" "}
+                                        {planet.films.map((planet, i) => (
+                                            <li key={i}> URL: {planet} </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <h3>Mostrar detalle</h3>
+                    )}
+                </div>
             )}
         </>
     );
