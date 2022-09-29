@@ -75,7 +75,6 @@ const Dashboard = () => {
                     ) : (
                         <PlanetDetail /* Passing the planetInfo object to the PlanetDetail component. */
                         details={planetInfo} handleResetList={() => setPlanetInfo({})}/>
-                        
                     )}
                 </div>
             )}
