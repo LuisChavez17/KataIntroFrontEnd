@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlanetDetail = ({ details }) => {
+const PlanetDetail = ({ details, handleResetList  }) => {
     return (
         <div>
             <h4>Detalle del planeta 🌍</h4>
@@ -10,7 +10,8 @@ const PlanetDetail = ({ details }) => {
             <p>Diametro: {details.diameter}</p>
             <p>Clima: {details.climate}</p>
             <p>Gravedad: {details.gravity}</p>
-            <p></p>
+            
+            <button onClick={handleResetList}> Atrás</button>
         </div>
     );
 };
