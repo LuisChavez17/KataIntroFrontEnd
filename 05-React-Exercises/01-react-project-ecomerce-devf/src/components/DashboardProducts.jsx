@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import PlanetDetail from "./PlanetDetail";
 
-const DashboardProducts = () => {
+const Products = () => {
 	/* A constant that is used to store the base URL of the API. */
 	const BASE_URL = 'https://ecomerce-master.herokuapp.com/api/v1/';
 
@@ -50,4 +50,4 @@ const DashboardProducts = () => {
 	);
 };
 
-export default DashboardProducts;
+export default Products;
