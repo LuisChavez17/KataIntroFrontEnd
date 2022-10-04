@@ -1,6 +1,14 @@
 module.exports = {
+	'globals': {
+		'angular': false,
+		'module': false,
+		'inject': false,
+		'document': false
+	},
 	'env': {
 		'browser': true,
+		'amd': true,
+		'node': true,
 		'es2021': true
 	},
 	'extends': [
