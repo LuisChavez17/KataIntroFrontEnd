@@ -40,9 +40,10 @@ const Products = () => {
 				<h3>Cargando información... ⭕️</h3>
 			) : (
 				productsArray.map((product, index) => (
-					<div key={index} style={{ border: '2px solid white' }}>
+					<div key={index} style={{ border: '2px solid white', margin: '10px 0', cursor: 'pointer', weight: '100px',  hight: '100px' }}>
 						<p>Name: {product.product_name}</p>
-						<p>precio: {product.price}</p>
+						<p>precio: ${product.price}</p>
+						<img src={product.image} alt="" style={{width: '100px',  hight: '100px' }} />
 					</div>
 				))
 			)}
