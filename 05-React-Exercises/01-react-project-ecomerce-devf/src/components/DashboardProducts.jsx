@@ -98,7 +98,7 @@ const Products = () => {
 				</Row>
 			</div>
 		);
-	}
-
+	});
+};
 
 	export default Products
