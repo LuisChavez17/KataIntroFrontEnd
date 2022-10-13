@@ -15,11 +15,17 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:react/recommended'
 	],
+	'parser': 'babel-eslint',
 	'overrides': [
 	],
 	'parserOptions': {
 		'ecmaVersion': 'latest',
-		'sourceType': 'module'
+		'parser': '@babel/eslint-parser',
+		'sourceType': 'module',
+		'ecmaFeatures': {
+			'jsx': true,
+			'experimentalObjectRestSpread': true
+		}
 	},
 	'plugins': [
 		'react'

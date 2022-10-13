@@ -11,7 +11,7 @@ function App() {
 			<Navegation />
 
 			<div>
-				<Products />
+				<Products/>
 			</div>
 		</>
 	);

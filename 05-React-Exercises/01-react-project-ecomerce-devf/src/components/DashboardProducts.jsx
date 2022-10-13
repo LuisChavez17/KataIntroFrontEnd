@@ -1,86 +1,104 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductInformation from './ProductInfo';
+import { Card, Col, Row, Nav, Form } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const Products = () => {
 	/* A constant that is used to store the base URL of the API. */
 	const BASE_URL = 'https://ecomerce-master.herokuapp.com/api/v1/';
 
 	const [productsArray, setproductsArray] = useState([]);
-	const [productInfo, setproductInfo] = useState({});
-	const [productIndex, setproductIndex] = useState(undefined);
-	const [nameProduct, setnameProduct] = useState(undefined); 
+	const [update, setupdate] = useState(true);
 
 	useEffect(() => {
 		axios
 			.get(`${BASE_URL}item`)
-			.then(({ data }) => setproductsArray(data))
-			.catch((error) => console.log(error, 'error calling API productos'));
-	}, []);
+			.then(({ data }) => {
+				setproductsArray(data)
+				setupdate(false)
+			})
+			.catch((error) => {
+				console.log(error, 'error calling API productos');
+			}, [setproductsArray])
 
-	useEffect(() => {
-		if (productIndex) {
-			axios
-				.get(`${BASE_URL}item/${productIndex}`)
-				.then(({ data }) => {
-					console.log('product details', data);
-					setproductInfo(data);
-				})
-				.catch((error) => console.log('error calling API card product', error));
-		}
-	}, [productIndex]);
+		const filterProducts = (products, query) => {
+			if (!query) {
+				return products;
+			};
 
-	const recoverProductDetail = (index) => {
-		setproductIndex(index);
-	};
+			return products.filter((product) => {
+				const productName = product.product_name.toLowerCase();
+				return productName.includes(query.toLowerCase());
+			});
+		};
 
-	useEffect(() => {
-		if (nameProduct) {
-			axios
-				.get(`${BASE_URL}item/${nameProduct}`)
-				.then(({ data }) => {
-					console.log('product details', data);
-					setproductInfo(data);
-				})
-				.catch((error) => console.log('error calling API card product', error));
-		}
-	}, [nameProduct]);
+		const { search } = window.location;
+		const query = new URLSearchParams(search).get('s');
+		const [searchQuery, setSearchQuery] = useState(query || '');
+		const filteredProducts = filterProducts(productsArray, searchQuery);
 
-	const handleFormValue = ({ target: { name, value } }) =>
-		setnameProduct({ ...nameProduct, [name]: value });
+		const [showProducts, setshowProducts] = useState(false);
 
-	return (
-		<>
-			<nav>
-				<div>
-					<form >
-						<input type="text" name="nameProduct" placeholder="Search"  value={ ' '} onChange={handleFormValue} />
-						<button type="button" onClick={() => <ProductInformation details={productInfo} handleResetList={() => setproductInfo({})} />}>Search</button>
-					</form>
-				</div>
-			</nav>
-			<>
-				{productsArray.length === 0 ? (
-					<h3>Cargando información... ⭕️</h3>
-				) : (
-					<div>
-						{Object.values(productInfo).length === 0 ? (
-							productsArray.map((product, index) => (
-								<div key={index} style={{ border: '2px solid red', margin: '10px 0', cursor: 'pointer', weight: '100px', hight: '100px' }}>
-									<p>Name: {product.product_name}</p>
-									<p>precio: ${product.price}</p>
-									<img src={product.image} alt="" style={{ width: '100px', hight: '100px' }} />
-									<button onClick={() => recoverProductDetail(product._id)}> Mas detalles</button>
-								</div>
-							))) : (
-							<ProductInformation /* Passing the planetInfo object to the PlanetDetail component. */
-								details={productInfo} handleResetList={() => setproductInfo({})} />
-						)}
-					</div>
-				)}
-			</>
-		</>
-	);
-};
+		const handleClose = () => setshowProducts(false);
+		const handleShow = () => setshowProducts(true);
 
-export default Products;
+		const rol = JSON.parse(localStorage.getItem('role'));
+		const [roleUser, setRoleUser] = useState(rol || '');
+
+
+		if (update) {
+			return (
+				<div className="DivLInicial">
+					<center>
+						<div className="div2"><img className="initialImg" src="public/cargando.gif" /></div>
+					</center>
+				</div>);
+		};
+
+		return (
+			<div className="productCards">
+
+				<h2 style={{ color: 'white' }}><b> {filteredProducts.length} Product(s) </b> </h2>
+
+				<Row xl={5} md={3} xs={1} className="g-4">
+					{filteredProducts.map((product) => (
+						<Col key={`/product?id=${product._id}`}>
+							<Card style={{ width: '100%', height: '100%', }}>
+								{product.image != null && product.image.trim().length > 5 ? (
+									<Card.Img variant="top" src={product.image} width={250} height={230} />
+								) : (
+									<Card.Img variant="top" src="./public/not-found.jpg" alt="Not found" width={250} height={230} />
+								)}
+								<Card.Body>
+									<Card.Title>{product.product_name}</Card.Title>
+									{product.description != null ? (
+										<Card.Text>
+
+											{product.description.slice(0, 30)}...
+										</Card.Text>
+									) : (
+										<Card.Text>
+
+											Description not available
+										</Card.Text>
+									)}
+									<Card.Text>
+										<b>Price: {product.price} USD</b>
+									</Card.Text>
+									<div className="containerTo">
+										<a href={`/product?id=${product._id}`}>
+											<button className="goTo">More details</button>
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
+						</Col>
+					))}
+				</Row>
+			</div>
+		);
+	}
+
+
+	export default Products

@@ -1,0 +1,45 @@
+.productCards {
+    margin: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .productCards {
+        margin: 3.75rem;
+    }
+}
+
+.goTo {
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    border: none;
+}
+
+.goTo:hover {
+    background-color: #0026ffd4;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.546), 0 0 10px rgba(255, 253, 253, 0.369), 0 0 10px rgba(255, 253, 253, 0.369);
+}
+
+.containerTo {
+    text-align: center;
+}
+
+.DivLInicial {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    left: 0%;
+    top: 0%;
+    background-color: white;
+    text-align: center;
+}
+
+.initialImg {
+    width: 100px;
+    max-width: 300px;
+}
+
+.div2 {
+    margin-top: 20%;
+}
